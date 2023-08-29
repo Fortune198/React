@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { IoIosStar, IoIosStarOutline } from 'react-icons/io'
+import { IoIosStar, IoIosStarOutline } from 'react-icons/io';
+
+
 
 class Rating extends Component {
     constructor(props) {
@@ -40,16 +42,14 @@ class Rating extends Component {
                 ) : (
                     <IoIosStarOutline onClick={this.handleClick.bind(this, 5)} />
                 )}
-                {this.props.numOfReviews}
             </div>
-        )
+        );
     }
 }
 
 export default Rating;
-
-// const styles={
-//  starStyle:{
-//  color: 'orange' 
-//  }
-// }
+const styles = {
+    starStyle: {
+        color: 'orange'
+    }
+}
