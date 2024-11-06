@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GitHub from './GitHub';
+import Products from './Products';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Nav, Navbar } from 'react-bootstrap';
 import GitHubUser from './GitHubUser';
@@ -29,13 +30,15 @@ class Header extends Component {
               <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/github">GitHub</Nav.Link>
+                <Nav.Link href="/Products">Products</Nav.Link>
               </Nav>
             </Navbar.Collapse>
           </Navbar>
           <Switch>
-          <Route path="/github/user/:login/:id" component={GitHubUser} />
+            <Route path="/github/user/:login/:id" component={GitHubUser} />
             <Route path="/github" component={GitHub} />
             <Route exact path="/" component={Home} />
+            <Route exact path="/Products" component={Products} />
             <Route path="/*" component={NotFound} />
           </Switch>
         </div>

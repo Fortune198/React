@@ -32,8 +32,9 @@ class GitHub extends Component {
         })
         this.getGitHubData(this.state.searchTerm);
     }
-
+    //getGitHubData method returns a Promise which we need to subscribe to
     getGitHubData(_searchTerm) {
+        //we use the get() method of axios and give the url of our API endpoint.
         axios.get("https://api.github.com/search/users?q=" + _searchTerm)
             .then(res => {
                 //change state (no longer loading)
@@ -47,6 +48,7 @@ class GitHub extends Component {
             });
     }
     render() {
+        //use map to repeat the media object for each user data we get from GitHub
         const listUsers = this.state.data.map((user) =>
             <Media key={user.id}>
                 <a href={user.html_url}>
